@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vertex Investimento | Exclusividade & Crescimento</title>
+  <meta name="description" content="Vertex Investimentos — soluções financeiras de luxo para pessoas físicas e empresas. Planos exclusivos, acompanhamento premium e gestão estratégica de patrimônio." />
+  <meta name="keywords" content="investimento, vertex, pessoa física, empresa, plano premium, gestão patrimonial, consultoria financeira" />
+  <meta name="author" content="Vertex Investimentos" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://vertexinvestimentos.com/" />
+  <meta name="theme-color" content="#0d0d0d" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vertex Investimento | Exclusividade & Crescimento" />
+  <meta property="og:description" content="Planos exclusivos para pessoas físicas e empresas. Gestão estratégica, acompanhamento premium e rentabilidade." />
+  <meta property="og:url" content="https://vertexinvestimentos.com/" />
+  <meta property="og:site_name" content="Vertex Investimentos" />
+  <meta property="og:image" content="https://vertexinvestimentos.com/imagens/capa.jpg" />
+  <meta property="og:image:alt" content="Capa Vertex Investimento — luxo e exclusividade" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vertex Investimento | Exclusividade & Crescimento" />
+  <meta name="twitter:description" content="Planos exclusivos para pessoas físicas e empresas. Gestão estratégica, acompanhamento premium e rentabilidade." />
+  <meta name="twitter:image" content="https://vertexinvestimentos.com/imagens/capa.jpg" />
+
+  <!-- Preconnect / Preload fonts & hero image -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  </noscript>
+
+  <link rel="icon" href="https://vertexinvestimentos.com/imagens/favicon.png" type="image/png" />
+
+  <!-- CSS -->
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html,body { height:100%; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      text-align:center;
+      overflow-x:hidden;
+    }
+    .conteudo {
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      padding:100px 20px;
+      min-height:100vh;
+      animation: fadeIn 1s ease;
+    }
+    .conteudo h2 {
+      font-family:'Playfair Display', serif;
+      font-size:3em;
+      color:#e6c77f;
+      margin-bottom:20px;
+      font-weight:700;
+    }
+    .conteudo p {
+      font-size:1.2em;
+      max-width:650px;
+      line-height:1.8;
+      color:#ccc;
+      margin-bottom:60px;
+    }
+    .planos {
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      flex-wrap:wrap;
+      margin-bottom:80px;
+    }
+    .card {
+      background:#1a1a1a;
+      border:1px solid rgba(230,199,127,0.4);
+      border-radius:20px;
+      padding:40px 30px;
+      width:280px;
+      transition:all .4s ease;
+      text-align:center;
+      box-shadow:0 0 15px rgba(0,0,0,0.6);
+    }
+    .card:hover { transform:translateY(-10px); box-shadow:0 0 30px rgba(230,199,127,0.6); }
+    .card h3 { font-family:'Playfair Display', serif; font-size:2em; color:#e6c77f; margin-bottom:20px; }
+    .card p { font-size:1em; color:#ccc; line-height:1.6; }
+    .card button {
+      margin-top:25px; padding:12px 30px; border:2px solid #e6c77f; background:none; color:#e6c77f; border-radius:30px; cursor:pointer; transition:.3s;
+    }
+    .card button:hover { background:#e6c77f; color:#0d0d0d; }
+
+    .popup {
+      display:none;
+      position:fixed;
+      top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.85);
+      backdrop-filter:blur(6px);
+      justify-content:center;
+      align-items:center;
+      z-index:1000;
+      animation: fadeIn .5s ease;
+    }
+    .popup-content {
+      background:#1a1a1a;
+      border:1px solid rgba(230,199,127,0.5);
+      border-radius:15px;
+      padding:40px;
+      max-width:420px;
+      width:90%;
+      text-align:center;
+      color:#f5f5f5;
+      box-shadow:0 0 25px rgba(230,199,127,0.3);
+      animation: slideUp .5s ease;
+    }
+    .popup-content h3 { font-family:'Playfair Display', serif; font-size:2em; color:#e6c77f; margin-bottom:20px; }
+    .popup-content p { font-size:1.05em; line-height:1.6; color:#ccc; }
+    .close-btn { margin-top:25px; padding:10px 25px; border:2px solid #e6c77f; background:none; color:#e6c77f; border-radius:30px; cursor:pointer; transition:.3s; }
+    .close-btn:hover { background:#e6c77f; color:#0d0d0d; }
+
+    footer {
+      padding:40px 20px;
+      background:#111;
+      color:#ccc;
+      font-size:1.1em;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    footer a { color:#e6c77f; text-decoration:none; transition:.3s; }
+    footer a:hover { text-decoration:underline; }
+
+    @keyframes slideUp { from { transform:translateY(50px); opacity:0; } to { transform:translateY(0); opacity:1; } }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    @media(max-width:768px) {
+      .conteudo h2 { font-size:2em; }
+      .planos { flex-direction:column; align-items:center; gap:20px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="conteudo" aria-label="Conteúdo Principal">
+    <h2>Exclusividade e Crescimento</h2>
+    <p>Com a <strong>Vertex Investimentos</strong>, você descobre uma forma elegante e segura de investir. Nosso foco é maximizar seu patrimônio com sofisticação e discrição, guiando você para a excelência financeira.</p>
+
+    <div class="planos">
+      <article class="card">
+        <h3>Pessoa Física</h3>
+        <p>Planos personalizados para quem deseja começar sua jornada de investimentos com segurança e exclusividade.</p>
+        <button onclick="abrirPopup('fisica')">Saiba Mais</button>
+      </article>
+      <article class="card">
+        <h3>Empresa</h3>
+        <p>Soluções estratégicas para negócios que buscam crescimento sólido e gestão patrimonial sofisticada.</p>
+        <button onclick="abrirPopup('empresa')">Saiba Mais</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- Popups -->
+  <div class="popup" id="popup-fisica" role="dialog" aria-modal="true">
+    <div class="popup-content">
+      <h3>Plano Pessoa Física</h3>
+      <p>💳 R$ 35 mensais (ou R$ 45 com Acompanhamento Premium).<br>📈 + 5% do valor dos investimentos mensais resultantes dos investimentos Vertex.</p>
+      <button class="close-btn" onclick="fecharPopup('fisica')">Fechar</button>
+    </div>
+  </div>
+  <div class="popup" id="popup-empresa" role="dialog" aria-modal="true">
+    <div class="popup-content">
+      <h3>Plano Empresa</h3>
+      <p>💼 R$ 100 mensais, com acompanhamento completo econômico.<br>📊 + 1% do valor líquido mensal resultante dos investimentos Vertex.</p>
+      <button class="close-btn" onclick="fecharPopup('empresa')">Fechar</button>
+    </div>
+  </div>
+
+  <footer>
+    <span>Contato:</span>
+    <a href="https://wa.me/55492451957" target="_blank">Whatsapp: +55 (54) 92451957</a>
+    <a href="https://www.instagram.com/_vertex_oficial?igsh=MTI2dmoxaHRkdWs3OA==" target="_blank">Instagram</a>
+  </footer>
+
+  <script>
+    function abrirPopup(tipo) {
+      const popup = document.getElementById('popup-' + tipo);
+      if(!popup) return;
+      popup.style.display = 'flex';
+      document.body.style.overflow='hidden';
+    }
+    function fecharPopup(tipo) {
+      const popup = document.getElementById('popup-' + tipo);
+      if(!popup) return;
+      popup.style.display='none';
+      document.body.style.overflow='';
+    }
+    document.addEventListener('keydown', e=>{
+      if(e.key==='Escape'){
+        ['fisica','empresa'].forEach(t=>fecharPopup(t));
+      }
+    });
+    ['popup-fisica','popup-empresa'].forEach(id=>{
+      const p = document.getElementById(id);
+      p.addEventListener('click', e=>{
+        if(e.target===p) fecharPopup(id.includes('fisica')?'fisica':'empresa');
+      });
+    });
+  </script>
+</body>
+</html>
